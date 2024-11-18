@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -83,6 +84,16 @@ public class BadIOGUI {
             @Override
             public void actionPerformed(final ActionEvent e) {
                 System.out.println("KRISS");
+
+                try  {
+                    final List<String> linesToRead = Files.readAllLines(new File(PATH).toPath());
+                    for (String line : linesToRead) {
+                        System.out.println(linesToRead);
+                    } 
+                } catch (Exception e1) {
+                    JOptionPane.showMessageDialog(frame, e1, "Error", JOptionPane.ERROR_MESSAGE);
+                    e1.printStackTrace(); // NOPMD: allowed as this is just an exercise
+                }
             }
         });
     }
