@@ -29,11 +29,9 @@ public class Controller {
         return curruntFile.getAbsolutePath();
     }  
 
-    public void saveString(final String string) {
+    public void saveString(final String string) throws IOException{
         try (PrintStream ps = new PrintStream(curruntFile, StandardCharsets.UTF_8)) {
             ps.println(string);
-        } catch (IOException e) {
-            System.err.println("Error");
         }
     }
 }
