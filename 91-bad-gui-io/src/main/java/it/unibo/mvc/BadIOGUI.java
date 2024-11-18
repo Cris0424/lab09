@@ -52,6 +52,12 @@ public class BadIOGUI {
         canvas2.setLayout(new BoxLayout(canvas2, BoxLayout.LINE_AXIS));
         canvas.add(canvas2, BorderLayout.CENTER);
         canvas2.add(write);
+
+        /*
+         * EX 01.02
+         */
+        final JButton readButton = new JButton("Read button");
+        canvas2.add(readButton);
         /*
          * Handlers
          */
@@ -98,6 +104,8 @@ public class BadIOGUI {
          * OK, ready to push the frame onscreen
          */
         frame.setVisible(true);
+
+        frame.pack();
     }
 
     /**
