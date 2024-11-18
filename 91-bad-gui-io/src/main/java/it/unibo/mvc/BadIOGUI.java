@@ -79,6 +79,12 @@ public class BadIOGUI {
                 }
             }
         });
+        readButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                System.out.println("KRISS");
+            }
+        });
     }
 
     private void display() {
