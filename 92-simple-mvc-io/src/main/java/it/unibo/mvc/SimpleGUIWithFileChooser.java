@@ -47,6 +47,8 @@ public final class SimpleGUIWithFileChooser {
 
         final JButton browseButton = new JButton("Browse...");
         canvas2.add(browseButton, BorderLayout.LINE_END);
+
+        canvas.add(canvas2, BorderLayout.NORTH);
         /*
          * Hendlers
          */
