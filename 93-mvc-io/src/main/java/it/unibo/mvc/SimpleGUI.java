@@ -52,6 +52,20 @@ public final class SimpleGUI {
             public void actionPerformed(ActionEvent e) {
                 controller.setNextStringToPrint(textField.getText());
                 System.out.println(controller.getNextStringToPrint());
+                controller.printCurrentString();
+            }
+            
+        });
+
+        historyButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String memoryString = "";
+                for (String iString : controller.getHistoryStringPrinted()) {
+                    memoryString = memoryString + " " + iString;
+                }
+                textArea.setText(memoryString);
             }
             
         });
