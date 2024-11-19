@@ -13,9 +13,10 @@ public final class SimpleController implements Controller {
 
     @Override
     public void setNextStringToPrint(String nextString) {
-        this.nextString = nextString;
         if (nextString.equals(null)) {
             throw new NullPointerException("null values are not acceptable");
+        } else {
+            this.nextString = nextString;
         }
     }
 
@@ -26,10 +27,7 @@ public final class SimpleController implements Controller {
 
     @Override
     public List<String> getHistoryStringPrinted() {
-        for (String listHistoryString : historyList) {
-            System.out.println(listHistoryString);
-        }
-        return historyList;
+        return List.copyOf(historyList);
     }
 
     @Override
