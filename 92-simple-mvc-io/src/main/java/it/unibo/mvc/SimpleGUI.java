@@ -21,6 +21,10 @@ public final class SimpleGUI {
     private static final int PROPORTION = 5;
     private final JFrame frame = new JFrame();
 
+    /**
+     * 
+     * @param controller
+     */
     public SimpleGUI(final Controller controller) {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
@@ -44,14 +48,13 @@ public final class SimpleGUI {
         saveButton.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent event) {
+            public void actionPerformed(final ActionEvent event) {
                 try {
                     controller.saveString(textArea.getText());
                 } catch (IOException e) {
                      JOptionPane.showMessageDialog(null, e.getMessage(), "An error occurred", JOptionPane.ERROR_MESSAGE);
                 }
-            }
-            
+            } 
         });
     }
 
@@ -64,8 +67,11 @@ public final class SimpleGUI {
         frame.setVisible(true);
     }
 
-
-    public static void main(String[] args) {
+    /**
+     * 
+     * @param args
+     */
+    public static void main(final String[] args) {
         final SimpleGUI gui = new SimpleGUI(new Controller());
         gui.display();
     }

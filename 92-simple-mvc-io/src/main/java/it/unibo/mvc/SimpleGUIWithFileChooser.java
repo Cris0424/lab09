@@ -1,5 +1,4 @@
 package it.unibo.mvc;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -22,23 +21,23 @@ import javax.swing.JTextArea;
 public final class SimpleGUIWithFileChooser {
     private static final int PROPORTION = 5;
     private final JFrame frame = new JFrame();
-
+    /**
+     * 
+     * @param controller
+     */
     public SimpleGUIWithFileChooser(final Controller controller) {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        
         final JTextArea textArea = new JTextArea();
         canvas.add(textArea, BorderLayout.CENTER);
-        
         final JButton saveButton = new JButton("Save");
         canvas.add(saveButton, BorderLayout.SOUTH);
 
         final JPanel canvas2 = new JPanel();
         canvas2.setLayout(new BorderLayout());
-        frame.add(canvas2,BorderLayout.NORTH);
+        frame.add(canvas2, BorderLayout.NORTH);
 
         final JTextArea textArea2 = new JTextArea();
         canvas2.add(textArea2, BorderLayout.CENTER);
@@ -55,32 +54,30 @@ public final class SimpleGUIWithFileChooser {
         saveButton.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent event) {
+            public void actionPerformed(final ActionEvent event) {
                 try {
                     controller.saveString(textArea.getText());
                 } catch (IOException e) {
                      JOptionPane.showMessageDialog(null, e.getMessage(), "An error occurred", JOptionPane.ERROR_MESSAGE);
                 }
             }
-            
         });
 
         browseButton.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser();
-                int result = fileChooser.showOpenDialog(frame);
+            public void actionPerformed(final ActionEvent e) {
+                final JFileChooser fileChooser = new JFileChooser();
+                final int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     controller.setCurrentFile(fileChooser.getSelectedFile());
                     textArea2.setText(fileChooser.getSelectedFile().getAbsolutePath());
                 } else if (result == JFileChooser.CANCEL_OPTION) {
-                    // non faccio nulla
+                    System.out.println("do nothing"); //NOPMD
                 } else {
                     JOptionPane.showMessageDialog(frame, result, "error", JOptionPane.ERROR_MESSAGE);
                 }
             }
-            
         });
     }
 
@@ -93,10 +90,12 @@ public final class SimpleGUIWithFileChooser {
         frame.setVisible(true);
     }
 
-
-    public static void main(String[] args) {
+    /**
+     * 
+     * @param args
+     */
+    public static void main(final String[] args) {
         final SimpleGUIWithFileChooser gui = new SimpleGUIWithFileChooser(new Controller());
         gui.display();
     }
-    
 }
