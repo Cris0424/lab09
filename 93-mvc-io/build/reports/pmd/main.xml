@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.7.0" timestamp="2024-11-20T09:31:00.775">
+<file name="C:\Users\crist\Desktop\OOP\lab\lab09\93-mvc-io\src\main\java\it\unibo\mvc\Controller.java">
+<violation beginline="10" endline="10" begincolumn="17" endcolumn="37" rule="UnnecessaryModifier" ruleset="Code Style" package="it.unibo.mvc" class="Controller" method="setNextStringToPrint" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'setNextStringToPrint': the method is declared in an interface type
+</violation>
+<violation beginline="16" endline="16" begincolumn="19" endcolumn="39" rule="UnnecessaryModifier" ruleset="Code Style" package="it.unibo.mvc" class="Controller" method="getNextStringToPrint" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'getNextStringToPrint': the method is declared in an interface type
+</violation>
+<violation beginline="21" endline="21" begincolumn="25" endcolumn="48" rule="UnnecessaryModifier" ruleset="Code Style" package="it.unibo.mvc" class="Controller" method="getHistoryStringPrinted" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'getHistoryStringPrinted': the method is declared in an interface type
+</violation>
+<violation beginline="26" endline="26" begincolumn="17" endcolumn="35" rule="UnnecessaryModifier" ruleset="Code Style" package="it.unibo.mvc" class="Controller" method="printCurrentString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'printCurrentString': the method is declared in an interface type
+</violation>
+</file>
+<file name="C:\Users\crist\Desktop\OOP\lab\lab09\93-mvc-io\src\main\java\it\unibo\mvc\SimpleController.java">
+<violation beginline="15" endline="15" begincolumn="45" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="it.unibo.mvc" class="SimpleController" method="setNextStringToPrint" variable="nextString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'nextString' is not assigned and could be declared final
+</violation>
+<violation beginline="16" endline="16" begincolumn="13" endcolumn="36" rule="EqualsNull" ruleset="Error Prone" package="it.unibo.mvc" class="SimpleController" method="setNextStringToPrint" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_errorprone.html#equalsnull" priority="1">
+Avoid using equals() to compare against null
+</violation>
+<violation beginline="17" endline="17" begincolumn="13" endcolumn="78" rule="AvoidThrowingNullPointerException" ruleset="Design" package="it.unibo.mvc" class="SimpleController" method="setNextStringToPrint" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_design.html#avoidthrowingnullpointerexception" priority="1">
+Avoid throwing null pointer exceptions.
+</violation>
+<violation beginline="35" endline="35" begincolumn="13" endcolumn="41" rule="EqualsNull" ruleset="Error Prone" package="it.unibo.mvc" class="SimpleController" method="printCurrentString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_errorprone.html#equalsnull" priority="1">
+Avoid using equals() to compare against null
+</violation>
+<violation beginline="39" endline="39" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" package="it.unibo.mvc" class="SimpleController" method="printCurrentString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+</file>
+<file name="C:\Users\crist\Desktop\OOP\lab\lab09\93-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java">
+<violation beginline="53" endline="53" begincolumn="17" endcolumn="23" rule="SystemPrintln" ruleset="Best Practices" package="it.unibo.mvc" method="actionPerformed" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="64" endline="64" begincolumn="29" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="it.unibo.mvc" method="actionPerformed" variable="iString" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'iString' could be declared final
+</violation>
+<violation beginline="65" endline="65" begincolumn="21" endcolumn="33" rule="UseStringBufferForStringAppends" ruleset="Performance" package="it.unibo.mvc" method="actionPerformed" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.7.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+</file>
+</pmd>
