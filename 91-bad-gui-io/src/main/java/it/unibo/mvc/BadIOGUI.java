@@ -82,14 +82,14 @@ public class BadIOGUI {
         readButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println("KRISS");
+                System.out.println("KRISS"); // NOPMD
 
                 try  {
                     final List<String> linesToRead = Files.readAllLines(new File(PATH).toPath());
-                    for (String line : linesToRead) {
-                        System.out.println(linesToRead);
+                    for (final String line : linesToRead) {
+                        System.out.println(line); // NOPMD
                     } 
-                } catch (Exception e1) {
+                } catch (IOException e1) {
                     JOptionPane.showMessageDialog(frame, e1, "Error", JOptionPane.ERROR_MESSAGE);
                     e1.printStackTrace(); // NOPMD: allowed as this is just an exercise
                 }
