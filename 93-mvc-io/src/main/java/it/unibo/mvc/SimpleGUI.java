@@ -21,7 +21,11 @@ public final class SimpleGUI {
     private static final int PROPORTION = 5;
     private final JFrame frame = new JFrame();
 
-    public SimpleGUI (final Controller controller) {
+    /**
+     * builds a new {@link SimpleGUI}.
+     * @param controller for controller istance
+     */
+    public SimpleGUI(final Controller controller) {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
         frame.setContentPane(canvas);
@@ -37,10 +41,10 @@ public final class SimpleGUI {
         canvas.add(canvas2, BorderLayout.SOUTH);
 
         final JButton printButton = new JButton("print");
-        canvas2.add(printButton,BorderLayout.SOUTH);
+        canvas2.add(printButton, BorderLayout.SOUTH);
 
         final JButton historyButton = new JButton("show history");
-        canvas2.add(historyButton,BorderLayout.SOUTH);
+        canvas2.add(historyButton, BorderLayout.SOUTH);
 
         /*
          * Handlers
@@ -48,27 +52,24 @@ public final class SimpleGUI {
         printButton.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 controller.setNextStringToPrint(textField.getText());
-                System.out.println(controller.getNextStringToPrint());
+                System.out.println(controller.getNextStringToPrint()); // NOPMD
                 controller.printCurrentString();
             }
-            
         });
 
         historyButton.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 String memoryString = "";
-                for (String iString : controller.getHistoryStringPrinted()) {
+                for (final String iString : controller.getHistoryStringPrinted()) {
                     memoryString = memoryString.concat(" " + iString);
                 }
                 textArea.setText(memoryString);
             }
-            
         });
-
     }
 
     private void display() {
@@ -80,8 +81,11 @@ public final class SimpleGUI {
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
-
-    public static void main(String[] args) {
+    /**
+     * 
+     * @param args
+     */
+    public static void main(final String[] args) {
         final SimpleGUI gui = new SimpleGUI(new SimpleController());
         gui.display();
     }

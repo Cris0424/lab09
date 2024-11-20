@@ -9,12 +9,12 @@ import java.util.List;
  */
 public final class SimpleController implements Controller {
     private String nextString;
-    List<String> historyList = new LinkedList<>();
+    private final List<String> historyList = new LinkedList<>();
 
     @Override
-    public void setNextStringToPrint(String nextString){
-        if (nextString.equals(null)) {
-            throw new NullPointerException("null values are not acceptable");
+    public void setNextStringToPrint(final String nextString) {
+        if (nextString == null) {
+            throw new IllegalArgumentException("null values are not acceptable");
         } else {
             this.nextString = nextString;
         }
@@ -32,11 +32,11 @@ public final class SimpleController implements Controller {
 
     @Override
     public void printCurrentString() {
-        if (this.nextString.equals(null)) {
+        if (this.nextString == null) {
             throw new IllegalStateException();
         } else {
             historyList.add(nextString);
-            System.out.println(historyList);
+            System.out.println(historyList); // NOPMD
         }
     }
 
