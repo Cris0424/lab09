@@ -62,7 +62,7 @@ public final class SimpleGUI {
             public void actionPerformed(ActionEvent e) {
                 String memoryString = "";
                 for (String iString : controller.getHistoryStringPrinted()) {
-                    memoryString = memoryString + " " + iString;
+                    memoryString = memoryString.concat(" " + iString);
                 }
                 textArea.setText(memoryString);
             }

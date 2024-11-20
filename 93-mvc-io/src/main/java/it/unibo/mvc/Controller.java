@@ -7,26 +7,23 @@ import java.util.List;
  */
 public interface Controller {
 
-    public void setNextStringToPrint(String nextString);
-    /*
-     * Un metodo per impostare la prossima stringa da 
-     * stampare. I valori nulli non sono accettabili e 
-     * deve essere generata un'eccezione.
+    /**
+     * 
+     * @param nextString next string to print
      */
-    public String getNextStringToPrint();
-    /*
-     * Un metodo per ottenere la 
-     * prossima stringa da stampare.
+    void setNextStringToPrint(String nextString);
+    /**
+     * 
+     * @return next string to print
      */
-    public List<String> getHistoryStringPrinted();
-    /*
-     * Un metodo per ottenere la cronologia delle stringhe 
-     * stampate (sotto forma di una List di String).
+    String getNextStringToPrint(); 
+    /**
+     * 
+     * @return history of printed strings as a list
      */
-    public void printCurrentString();
-    /*
-     * Un metodo che stampa la stringa corrente. 
-     * Se la stringa corrente non è impostata, 
-     * deve essere generata una IllegalStateException.
+    List<String> getHistoryStringPrinted();
+    /**
+     * 
      */
-}   
+    void printCurrentString();
+}
